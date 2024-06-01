@@ -1,8 +1,29 @@
 ---
+import Header from "@/components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import "@/styles/globals.css";
 ---
 
 <Layout title="Space tourism website." description="Space tourism website.">
+  <!-- The Header -->
+  <Header />
   <main></main>
 </Layout>
+
+<style is:inline>
+  body {
+    background-image: url("/images/home/background-home-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  @media (max-width: 768px) {
+    body {
+      background-image: url("/images/home/background-home-tablet.jpg");
+    }
+  }
+  @media (max-width: 375px) {
+    body {
+      background-image: url("/images/home/background-home-mobile.jpg");
+    }
+  }
+</style>

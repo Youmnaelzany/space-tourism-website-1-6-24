@@ -1,3 +1,137 @@
 ---
 import "@/styles/globals.css";
 ---
+
+<header class="relative flex items-center justify-between">
+  <div
+    class="mx-6 mt-6 flex items-center justify-between gap-[16.44rem] md:ml-[2.44rem] md:gap-[14.44rem] xl:ml-[3.44rem] xl:mt-0"
+  >
+    <!-- The Logo -->
+    <a href="/" class="">
+      <img src="/images/shared/logo.svg" alt="LOGO" class="" />
+    </a>
+    <!-- Menu Button -->
+    <button type="button" aria-controls="open-mobile-menu" id="open-button">
+      <img
+        src="/images/shared/icon-hamburger.svg"
+        alt="Open Menu"
+        class="md:hidden"
+      />
+    </button>
+    <!-- Close Button -->
+    <button
+      type="button"
+      aria-controls="close-mobile-menu"
+      id="close-button"
+      class="z-50 hidden"
+    >
+      <img src="/images/shared/icon-close.svg" alt="Close Menu" class="" />
+    </button>
+  </div>
+  <!-- Mobile Menu  -->
+  <nav
+    class="navMenu absolute -right-6 -top-6 hidden h-[41.6875rem] w-[15.875rem] transition-none"
+  >
+    <ul class="flex flex-col gap-8 pl-8 pt-[7.38rem]">
+      <li>
+        <a
+          href="/"
+          class="font-barlowCondensed text-base font-normal leading-normal tracking-[0.16875rem] text-white"
+        >
+          <span class="font-bold">00</span> Home
+        </a>
+      </li>
+      <li>
+        <a
+          href="/destination-moon"
+          class="font-barlowCondensed text-base font-normal leading-normal tracking-[0.16875rem] text-white"
+        >
+          <span class="font-bold">01</span> Destination
+        </a>
+      </li>
+      <li>
+        <a
+          href="/crew-commander"
+          class="font-barlowCondensed text-base font-normal leading-normal tracking-[0.16875rem] text-white"
+        >
+          <span class="font-bold">02</span> Crew
+        </a>
+      </li>
+      <li>
+        <a
+          href="/technology-vehicle"
+          class="font-barlowCondensed text-base font-normal leading-normal tracking-[0.16875rem] text-white"
+        >
+          <span class="font-bold">03</span> Technology
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Tbalet & Desktop Menu -->
+  <nav
+    class="navMenu relative hidden md:flex md:h-24 md:w-[28.125rem] xl:w-[51.875rem] xl:before:absolute xl:before:left-[-27.5rem] xl:before:top-12 xl:before:h-[0.0625rem] xl:before:w-[29.5625rem] xl:before:bg-white xl:before:opacity-[0.2515]"
+  >
+    <ul
+      class="flex items-center justify-evenly gap-[2.31rem] px-12 pb-10 pt-[2.44rem] xl:mx-auto xl:justify-center"
+    >
+      <li>
+        <a
+          href="/"
+          class="relative flex gap-[0.69rem] font-barlowCondensed text-sm font-normal leading-normal tracking-[0.14763rem] text-white after:focus:absolute after:focus:bottom-[-2.38rem] after:focus:h-[0.1875rem] after:focus:w-[100%] after:focus:bg-white xl:text-base xl:tracking-[0.16875rem]"
+        >
+          <span class="hidden font-bold xl:flex">00</span>
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          href="/destination-moon"
+          class="relative flex gap-[0.69rem] font-barlowCondensed text-sm font-normal leading-normal tracking-[0.14763rem] text-white after:focus:absolute after:focus:bottom-[-2.38rem] after:focus:h-[0.1875rem] after:focus:w-[100%] after:focus:bg-white xl:text-base xl:tracking-[0.16875rem]"
+        >
+          <span class="hidden font-bold xl:flex">01</span>
+          Destination
+        </a>
+      </li>
+      <li>
+        <a
+          href="/crew-commander"
+          class="relative flex gap-[0.69rem] font-barlowCondensed text-sm font-normal leading-normal tracking-[0.14763rem] text-white after:focus:absolute after:focus:bottom-[-2.38rem] after:focus:h-[0.1875rem] after:focus:w-[100%] after:focus:bg-white xl:text-base xl:tracking-[0.16875rem]"
+        >
+          <span class="hidden font-bold xl:flex">02</span>
+          Crew
+        </a>
+      </li>
+      <li>
+        <a
+          href="/technology-vehicle"
+          class="relative flex gap-[0.69rem] font-barlowCondensed text-sm font-normal leading-normal tracking-[0.14763rem] text-white after:focus:absolute after:focus:bottom-[-2.38rem] after:focus:h-[0.1875rem] after:focus:w-[100%] after:focus:bg-white xl:text-base xl:tracking-[0.16875rem]"
+        >
+          <span class="hidden font-bold xl:flex">03</span>
+          Technology
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style is:global>
+  .navMenu {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(40.774227142333984px);
+  }
+</style>
+
+<script is:inline>
+  const openButton = document.getElementById("open-button");
+  const closeButton = document.getElementById("close-button");
+  const navMenu = document.querySelector(".navMenu");
+
+  function toggleMenu() {
+    navMenu.classList.toggle("hidden");
+    openButton.classList.toggle("hidden");
+    closeButton.classList.toggle("hidden");
+  }
+
+  openButton.addEventListener("click", toggleMenu);
+  closeButton.addEventListener("click", toggleMenu);
+</script>
